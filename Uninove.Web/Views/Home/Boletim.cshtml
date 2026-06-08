@@ -1,6 +1,6 @@
 @{
-    var disciplinas = ViewBag.Disciplinas as List<string>;
-    var notas = ViewBag.Notas as List<double>;
+    var disciplinas = (ViewBag.Disciplinas as List<string>)!;
+    var notas = (ViewBag.Notas as List<double>)!;
 }
 
 <h2>Boletim</h2>
