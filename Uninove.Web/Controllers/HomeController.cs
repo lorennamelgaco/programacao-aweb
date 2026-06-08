@@ -21,6 +21,17 @@ public class HomeController : Controller
          return View();
     }
 
+    public IActionResult Boletim()
+    {
+        var disciplinas = new List<string> { "Desenv Web", "Arquitetura", "Internet das Coisas", "FrontEnd" };
+    var notas = new List<double> { 9.5, 6.0, 7.5, 8.0 };
+
+    ViewBag.Disciplinas = disciplinas;
+    ViewBag.Notas = notas;
+
+    return View();
+    }
+
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {

@@ -1,0 +1,39 @@
+@{
+    var disciplinas = ViewBag.Disciplinas as List<string>;
+    var notas = ViewBag.Notas as List<double>;
+}
+
+<h2>Boletim</h2>
+
+<table border="1">
+    <tr>
+        <th>Disciplina</th><th>Nota</th><th>Status</th>
+    </tr>
+    @for (int i = 0; i < disciplinas.Count; i++)
+    {
+        var nota = notas[i];
+        <tr>
+            <td>@disciplinas[i]</td>
+            <td>@nota</td>
+
+            <td>
+                @if (nota >= 6) { <span style="color:green">Aprovado</span> }
+                else { <span style="color:red">Reprovado</span> }
+            </td>
+
+            <td>
+                @switch (nota)
+                {
+                    case >= 9: <span></span> break;
+                    case >= 7: <span></span> break;
+                    case >= 5: <span></span> break;
+                    default:   <span></span> break;
+                }
+            </td>
+        </tr>
+    }
+    <tr>
+        <td><b>Média Geral</b></td>
+        <td colspan="3"><b>@System.Linq.Enumerable.Average(notas).ToString("F2")</b></td>
+    </tr>
+</table>
