@@ -23,10 +23,10 @@ public class HomeController : Controller
 
     public IActionResult Boletim()
     {
-        var disciplinas = new List<string> { "Desenv Web", "Arquitetura", "Internet das Coisas", "FrontEnd" };
+        var Disciplinas = new List<string> { "Desenv Web", "Arquitetura", "Internet das Coisas", "FrontEnd" };
     var notas = new List<double> { 9.5, 6.0, 7.5, 8.0 };
 
-    ViewBag.Disciplinas = disciplinas;
+    ViewBag.Disciplinas = Disciplinas;
     ViewBag.Notas = notas;
 
     return View();
